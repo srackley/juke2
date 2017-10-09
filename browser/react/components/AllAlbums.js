@@ -22,10 +22,7 @@ export default class AllAlbums extends Component {
   render () {
     const albums = this.state.albums;
     const selectAlbum = this.props.selectAlbum;
-    console.log("selectAlbum: ", selectAlbum)
-    console.log(this.props);
-    console.log("HERE", this.props.match.params.albumId)
-    
+
     return (
       <div>
         <h3>Albums</h3>
@@ -33,9 +30,9 @@ export default class AllAlbums extends Component {
         {
           albums.map(album => (
             <div className="col-xs-4" key={ album.id }>
-            console.log("album: ", album)
-            <Link to={`/albums/${album.id}`}>Go to an Album</Link>
+            <Link to={`/albums/${album.id}`}>
                 <img src={ album.imageUrl } />
+                </Link>
                 <div className="caption">
                   <h5>
                     <span>{ album.name }</span>
