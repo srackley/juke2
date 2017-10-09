@@ -32,13 +32,23 @@ render(){
   return (
     <div>
       <h3>{artist.name}</h3>
-      <h4>{this.state.albums}</h4>
-      <h4>Songs</h4>
+      <h4>Albums</h4>
+      <ul>
+      { this.state.albums.map(album => {
+        return (
+        <div key={album.id}>
+        <li>{album.name}</li>
+        </div>
+        )
+      })}
+      </ul>      <h4>Songs</h4>
       <ul>
       { this.state.songs.map(song => {
-        <div>
-        <li>song.name</li>
+        return (
+        <div key={song.id}>
+        <li>{song.name}</li>
         </div>
+        )
       })}
       </ul>
     </div>
