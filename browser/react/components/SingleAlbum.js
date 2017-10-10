@@ -31,7 +31,7 @@ export default class SingleAlbum extends Component {
         <div>
           <h3>{ album.name } </h3>
           <EmailShareButton url={window.location} subject={album.name} body={`Check out this hot new album! \n ${window.location}`}>
-          <EmailIcon/>
+          <EmailIcon size={32} round={true}/>
           </EmailShareButton>
           <img src={ album.imageUrl } className="img-thumbnail" />
         </div>
