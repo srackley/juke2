@@ -6,6 +6,7 @@ import Player from './Player';
 import { HashRouter, Route } from 'react-router-dom';
 import AllArtists from './AllArtists';
 import SingleArtist from './SingleArtist';
+import StatefulAlbums from './StatefulAlbums';
 
 export default class Main extends Component {
 
@@ -21,8 +22,8 @@ export default class Main extends Component {
           <Sidebar deselectAlbum={this.deselectAlbum} />
         </div>
         <div className="col-xs-10">
-          <Route exact path='/albums' component={ AllAlbums } />
-          <Route exact path='/' component={ AllAlbums } />
+          <Route exact path='/albums' component={ StatefulAlbums } />
+          <Route exact path='/' component={ StatefulAlbums } />
           <Route exact path='/albums/:albumId' component={ SingleAlbum } />
           <Route exact path='/artists' component={AllArtists} />
           <Route exact path='/artists/:artistId' component={ SingleArtist } />

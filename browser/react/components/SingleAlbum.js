@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Songs from '../components/Songs';
 import axios from 'axios';
+import AllAlbums from './AllAlbums';
 
 
 export default class SingleAlbum extends Component {
