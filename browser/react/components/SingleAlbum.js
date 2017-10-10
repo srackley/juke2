@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import Songs from '../components/Songs';
 import axios from 'axios';
 import AllAlbums from './AllAlbums';
-
+import { ShareButtons, generateShareIcon } from 'react-share';
+const {EmailShareButton} = ShareButtons;
+const EmailIcon = generateShareIcon('email');
 
 export default class SingleAlbum extends Component {
   constructor() {
@@ -27,7 +29,10 @@ export default class SingleAlbum extends Component {
     return (
       <div className="album">
         <div>
-          <h3>{ album.name }</h3>
+          <h3>{ album.name } </h3>
+          <EmailShareButton url={window.location} subject={album.name} body={`Check out this hot new album! \n ${window.location}`}>
+          <EmailIcon/>
+          </EmailShareButton>
           <img src={ album.imageUrl } className="img-thumbnail" />
         </div>
         <Songs songs={album.songs} />
